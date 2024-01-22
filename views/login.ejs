@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  </head>
+  <body>
+    <!-- <%= locals.role %> -->
+
+    <div class="container">
+      <div class="logopanel">
+        <div class="logo-container">
+          <h1>LOGO</h1>
+        </div>
+        <img src="/images/Group 48096339.png" alt="" width="500" height="500" />
+      </div>
+      <div class="loginpanel">
+        <h1><%= role %> Login</h1>
+        <% if (role === 'Admin') { %>
+        <form action="/admin" method="post">
+          <input
+            type="text"
+            name="userid"
+            id="userid"
+            placeholder="USER ID"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <% } else { %>
+        <form action="/user" method="post">
+          <input
+            type="text"
+            name="userid"
+            id="userid"
+            placeholder="USER ID"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

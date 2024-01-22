@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #646464;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.topbtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 5px;
+    background-color: white;
+    color: #1511f3;
+    font-size: medium;
+    border: 2px solid #1511f3;
+    padding: 10px 15px;
+    transition: all 0.2s linear;
+}
+
+.topbtn:hover {
+    background-color: #1511f3;
+    color: white;
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: column;
+    width: 150%;
+}
+
+.nameContainer>label {
+    font-size: small;
+}
+
+.nameContainer>input {
+    padding: 10px 8px;
+    font-size: larger;
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    border: 2px solid #80808075;
+}
+
+.photoContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+#selectPhoto {
+    margin-top: 5px;
+    text-align: center;
+    border: 2px solid #1511f3;
+    width: fit-content;
+    border-radius: 5px;
+    background-color: white;
+    color: #0500FF;
+    font-size: medium;
+    padding: 10px 15px;
+    transition: all 0.05s linear;
+}
+
+#selectPhoto:hover {
+    color: white;
+    background-color: #0500FF;
+}
+
+.photoContainer>input {
+    padding: 10px 8px;
+    font-size: larger;
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    border: 2px solid #80808075;
+}
+
+.photoContainer>button {
+    text-align: center;
+    color: #0500FF;
+    font-weight: 600;
+    border: 2px solid #0500FF;
+    border-radius: 5px;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 15px;
+    transition: all 0.1s linear;
+}
+
+.photoContainer>button:hover {
+    color: white;
+    background-color: #0500FF;
+}
+
+.createSide>form>button {
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background-color: #1511f3;
+    width: 200%;
+    padding: 15px 5px;
+}
+
+.createSide>form>button:hover {
+    background-color: #0500FF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.uploadBtn {
+    border: none;
+    width: 150%;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+    font-size: medium;
+    background-color: #1511f3;
+    padding: 10px 15px;
+    transition: all 0.05s linear;
+}
+
+.uploadBtn:hover {
+    background-color: #0500FF;
+}
+
+.photoContainer>label>img {
+    height: 200px;
+    width: 200px;
+}
+
+#photoLabel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+}
+
+.selectImage{
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .nameContainer{
+        width: 100%;
+    }
+    .uploadBtn{
+        width: 100%;
+    }
+    
+}

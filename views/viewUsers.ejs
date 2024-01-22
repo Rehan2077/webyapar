@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Users</title>
+    <link rel="stylesheet" href="/stylesheets/viewUsers.css" />
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <button class="backBtn" onclick="goBack()">&gt; Back</button>
+      <table>
+        <tr>
+          <th>User Id</th>
+          <th>Name</th>
+          <th>Photo</th>
+          <th>Action</th>
+        </tr>
+
+        <% admin.users.forEach(user => { %>
+        <tr>
+          <td><%=user.uid%></td>
+          <td><%=user.name%></td>
+          <td>
+            <% if (user.avatar.length==0) { %>
+            <img
+              src="/images/placeholder-image.jpg"
+              alt=""
+              width="70"
+              height="70"
+              style="margin-top: 5px"
+            />
+            <% } else { %>
+            <img
+              src="../uploads/<%= user.avatar %>"
+              alt=""
+              width="70"
+              height="70"
+              style="margin-top: 5px"
+            />
+            <% } %>
+          </td>
+          <td>
+            <% if (!user.verified) { %>
+            <button class="tableBtn" onclick="verifyUser('<%= user._id %>')">
+              Done
+            </button>
+            <% } %>
+            <button class="tableBtn" onclick="deleteUser('<%= user._id %>')">
+              Delete
+            </button>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+    </div>
+
+    <script>
+      async function verifyUser(userid) {
+        const data = await fetch(`/admin/verify/${userid}`, {
+          method: "PATCH",
+        });
+        const response = await data.json();
+
+        console.log(response);
+
+        if (response.message) {
+          window.location.reload();
+        } else alert("Error in verifying the user");
+      }
+
+      async function deleteUser(userid) {
+        const data = await fetch(`/admin/delete/${userid}`, {
+          method: "DELETE",
+        });
+        const response = await data.json();
+
+        console.log(response);
+
+        if (response.message) {
+          window.location.reload();
+        } else alert("Error in deleting the user");
+      }
+    </script>
+  </body>
+</html>

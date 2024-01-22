@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/adminHome.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="createSide">
+        <h1>Create User</h1>
+        <form action="/admin/create" method="post">
+          <div class="useridContainer">
+            <input
+              type="hidden"
+              name="adminid"
+              id="adminid"
+              value="<%= admin._id %>"
+            />
+            <label for="userid">User ID</label>
+            <input type="text" name="userid" id="userid" required />
+          </div>
+          <div class="passwordContainer">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="viewSide">
+        <h1>View User</h1>
+
+        <% if (admin.users[0] != null) { %>
+        <div class="userCard">
+          <h3><%=admin.users[0].uid%></h3>
+          <span class="counter">1</span>
+        </div>
+        <% } %> <% if (admin.users[1] != null) { %>
+        <div class="userCard">
+          <h3><%=admin.users[1].uid%></h3>
+          <span class="counter">2</span>
+        </div>
+        <% } %>
+
+        <a href="/admin/viewusers?adminId=<%= admin._id %>">View</a>
+      </div>
+    </div>
+  </body>
+</html>

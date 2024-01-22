@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #646464;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.createSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    gap: 20px;
+    width: 50%;
+    border-right: 1px solid #80808075;
+}
+
+.viewSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    gap: 20px;
+    width: 50%;
+    border-left: 1px solid #80808075;
+}
+
+.createSide>form {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.useridContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+}
+
+.useridContainer>label {
+    font-size: small;
+}
+
+.useridContainer>input {
+    padding: 10px 8px;
+    font-size: larger;
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    border: 2px solid #80808075;
+}
+
+.passwordContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+}
+
+.passwordContainer>label {
+    font-size: small;
+}
+
+.passwordContainer>input {
+    padding: 10px 8px;
+    font-size: larger;
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    border: 2px solid #80808075;
+}
+
+.createSide>form>button {
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background-color: #1511f3;
+    width: 200%;
+    padding: 15px 5px;
+}
+
+.createSide>form>button:hover {
+    background-color: #0500FF;
+}
+
+.userCard {
+    width: 80%;
+    background-color: #EAECFF;
+    padding: 50px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.userCard>h3 {
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    height: 50px;
+    font-weight: normal;
+    background: white;
+    border: 1px solid #80808075;
+}
+
+.counter {
+    color: white;
+    font-size: large;
+    position: absolute;
+    background: #0500FF;
+    line-height: 50%;
+    padding: 10px;
+    border-radius: 50%;
+    top: 7px;
+    right: 7px;
+}
+
+.viewSide>a {
+    margin-right: 10%;
+    font-size: medium;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: #1511f3;
+    padding: 15px 30px;
+    align-self: self-end;
+}
+
+.viewSide>a:hover {
+    background: #0500FF;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .createSide {
+        width: 100%;
+    }
+
+    .viewSide {
+        width: 100%;
+    }
+    .useridContainer{
+        width: 100%;
+    }
+    .passwordContainer{
+        width: 100%;
+    }
+    .createSide>form>button{
+        width: 100%;
+    }
+    .userCard{
+        padding: 25px;
+    }
+}
